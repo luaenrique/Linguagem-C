@@ -5,7 +5,7 @@ main(){
 	float v1,v2,v3; // definindo as variáveis.
 	
 	
-	printf("digite os tres valores respectivamente\n");
+	printf("digite os tres valores\n");
 	
 	scanf("%f %f %f", &v1, &v2, &v3); //guardando os valores nas variáveis.
 
