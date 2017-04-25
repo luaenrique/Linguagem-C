@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Esse cÛdigo lÍ uma determinada idade, e a converte para dias, meses e anos.
+//Esse c√≥digo l√™ uma determinada idade, e a converte para dias, meses e anos.
 
 main(){
-	float anos, meses, dias; // Declarando as vari·veis
+	float anos, meses, dias; // Declarando as vari√°veis
 	printf ("digite sua idade em dias\n"); // solicita a idade
-	 scanf("%f",&dias); //guarda a idade na vari·vel 'dias'
-    meses=(dias/30); //divide os dias por 30 para descobrir quantos meses
-    anos=(dias/365); // divide os dias por 365 para descobrir quantos anos
-    printf("a idade em anos e de %f\n, em meses e de %f\n e em dias e de %f", anos, meses, dias);//apresenta os dados
-    system ("pause");
+	 scanf("%f",&dias); //guarda a idade na vari√°vel 'dias'
+    	meses=(dias/30); //divide os dias por 30 para descobrir quantos meses
+    	anos=(dias/365); // divide os dias por 365 para descobrir quantos anos
+    	printf("a idade em anos e de %f\n, em meses e de %f\n e em dias e de %f", anos, meses, dias);//apresenta os dados
+    	system ("pause");
 }
 
-//Lu„ Enrique Zangrande
+//Lu√£ Enrique Zangrande
 //github.com/luaenrique/
