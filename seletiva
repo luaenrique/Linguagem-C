@@ -1,0 +1,68 @@
+
+
+var result = MessageBox.Show("Deseja excluir esse usuário?", "Excluir usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+switch (result)
+{
+	case DialogResult.Yes:
+		Usuarios u = new Usuarios();
+		u.DeleteUsuario(idusuario.Text.ToString());
+		break;
+	case DialogResult.No:
+		break;
+	default:
+		break;
+
+}
+
+
+Document d = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter pdf = PdfWriter.GetInstance(d, new FileStream("../../../../../../Reports/PDF.pdf", FileMode.Create));
+            d.Open();
+            PdfPTable table = new PdfPTable(4);
+            PdfPCell cell = new PdfPCell(new Phrase("Runners Data"));
+            cell.Colspan = 4;
+            cell.HorizontalAlignment = 1; //centering
+            d.Add(cell);
+            SqlCommand sql = new SqlCommand("SELECT Email, Gender, DateOfBirth, CountryCode FROM Runner");
+            sql.Connection = c.sqc;
+            using(SqlDataReader r = sql.ExecuteReader())
+            {
+                while (r.Read())
+                {
+                    table.AddCell(r.GetString(0));
+                    table.AddCell(r.GetString(1));
+                    table.AddCell(r.GetDateTime(2).ToString());
+                    table.AddCell(r.GetString(3));
+                }
+            }
+            d.Add(table);
+            d.Close(); 
+            
+            
+            
+            TimeSpan span = (Convert.ToDateTime("12/09/2017 08:00:00") - DateTime.Now);
+
+            label1.Text = String.Format("{0} days {1} hours and {2} minutes until the race starts!",
+                span.Days, span.Hours, span.Minutes);
+                
+                
+                
+                
+        private const int EM_SETCUEBANNER = 0x1501;
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [MarshalAs(UnmanagedType.LPWStr)]string lParam);
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            SendMessage(textBox1.Handle, EM_SETCUEBANNER, 0, "Digite Algo");
+        }
+        
+        
+        
+        e.Handled = !char.IsNumber(e.KeyChar) && !new[] { ',', '-', '\b' }.Contains(e.KeyChar);
