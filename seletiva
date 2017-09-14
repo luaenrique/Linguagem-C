@@ -66,3 +66,13 @@ Document d = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
         
         
         e.Handled = !char.IsNumber(e.KeyChar) && !new[] { ',', '-', '\b' }.Contains(e.KeyChar);
+	
+	
+	
+	foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[0].Value))
+                {
+                    row.Cells[0].Value = false;
+                }
+            }
